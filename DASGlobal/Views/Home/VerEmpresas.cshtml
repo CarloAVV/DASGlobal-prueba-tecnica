@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DASGlobal.Models.Empresa>
+
+@{
+    ViewBag.Title = "VerEmpresas";
+}
+
+<h2>VerEmpresas</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pais)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pais)
+        </td>
+        <td>
+            @Html.ActionLink("Modificar", "EditEmpresa", new { id=item.ID }) |
+            @Html.ActionLink("Eliminar", "EliminarEmpresa", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

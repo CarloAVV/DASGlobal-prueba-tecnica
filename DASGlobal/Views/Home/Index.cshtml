@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h1>
+    Credenciales para la Base de datos:
+</h1>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                <label class="cLabel">Usuario:</label>
+            </td>
+            <td>
+                <input class="cMargin10px" type="text" name="vUserDB" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="cLabel">Contraseña:</label>
+            </td>
+            <td>
+                <input class="cMargin10px" type="password" name="vPassDB" />
+            </td>
+        </tr>
+    </table>
+    <div>
+        <input class="btn" type="submit" />
+    </div>
+
+    <div>
+        <label style="color: green" class="cMargin10px">@ViewBag.MensajeAviso</label>
+    </div>
+    <div>
+        <label style="color: red" class="cMargin10px">@ViewBag.MensajeCredenciales</label>
+    </div>
+}

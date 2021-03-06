@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "CargarArchivo";
+}
+
+<h2>Cargar Archivo:</h2>
+
+@using (Html.BeginForm("CargarArchivo", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <label class="cLabel">Archivo Json:</label>
+        @Html.TextBox("file", "", new { type = "file" })
+        <input type="submit" />
+    </div>
+}
+
+
+<div>
+    <label style="color: red" class="cMargin10px">@ViewBag.MensajeCarga</label>
+</div>

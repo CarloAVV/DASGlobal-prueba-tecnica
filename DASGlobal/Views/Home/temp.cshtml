@@ -1,0 +1,81 @@
+﻿@model IEnumerable<DASGlobal.Models.RegistroTablaCompleta>
+
+@{
+    ViewBag.Title = "temp";
+}
+
+<h2>temp</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Empresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sucursal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SucursalDireccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SucursalTelefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Colaborador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ColaboradorCUI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpresaID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SucursalID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sucursal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SucursalDireccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SucursalTelefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Colaborador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ColaboradorCUI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpresaID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SucursalID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

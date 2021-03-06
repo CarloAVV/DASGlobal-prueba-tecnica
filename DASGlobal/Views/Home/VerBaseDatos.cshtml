@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DASGlobal.Models.RegistroTablaCompleta>
+
+@{
+    ViewBag.Title = "VerBaseDatos";
+}
+
+<h2>VerBaseDatos</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Empresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sucursal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SucursalDireccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SucursalTelefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Colaborador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ColaboradorCUI)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Empresa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Pais)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Sucursal)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SucursalDireccion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SucursalTelefono)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Colaborador)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ColaboradorCUI)
+    </td>
+    <td>
+        @Html.ActionLink("Modificar", "EditColaborador", new { cui = item.ColaboradorCUI }) |
+        @Html.ActionLink("Eliminar", "EliminarColaborador", new { cui = item.ColaboradorCUI })
+    </td>
+</tr>
+}
+
+</table>
